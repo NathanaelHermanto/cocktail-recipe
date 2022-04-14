@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 
 const pages = [
-    { page: 'Home', path: '/' },
+    { page: 'Home', path: '/cocktail-recipe' },
     { page: 'Drinks', path: '/drinks' },
     { page: 'Ingredients', path: '/ingredients' },
     { page: 'About', path: '/about' },
