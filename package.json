@@ -1,6 +1,7 @@
 {
   "name": "cocktail-recipe",
   "version": "0.1.0",
+  "homepage": "https://nathanaelhermanto.github.io/cocktail-recipe/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",
