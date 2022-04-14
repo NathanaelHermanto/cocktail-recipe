@@ -11,7 +11,12 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import {Link} from 'react-router-dom';
 
-const pages = ['Home', 'Drinks', 'Ingredients', 'About'];
+const pages = [
+    { page: 'Home', path: '/' },
+    { page: 'Drinks', path: '/calculator' },
+    { page: 'Ingredients', path: '/products' },
+    { page: 'About', path: '/about' },
+  ];
 
 const NavigationBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -66,20 +71,11 @@ const NavigationBar = () => {
                                 display: { xs: 'block', md: 'none' },
                             }}
                             >
-                    
-                            <MenuItem component={Link} to={"/"} onClick={handleCloseNavMenu} key={pages[0]} >
-                                <Typography textAlign="center">{pages[0]}</Typography>
-                            </MenuItem>
-                            <MenuItem component={Link} to={"/drinks"} onClick={handleCloseNavMenu} key={pages[1]} >
-                                <Typography textAlign="center">{pages[1]}</Typography>
-                            </MenuItem>
-                            <MenuItem component={Link} to={"/ingredients"} onClick={handleCloseNavMenu} key={pages[2]} >
-                                <Typography textAlign="center">{pages[2]}</Typography>
-                            </MenuItem>
-                            <MenuItem component={Link} to={"/about"} onClick={handleCloseNavMenu} key={pages[3]} >
-                                <Typography textAlign="center">{pages[3]}</Typography>
-                            </MenuItem>
-
+                            {pages.map(({page, path}) => (
+                                <MenuItem component={Link} to={path} onClick={handleCloseNavMenu} key={page} >
+                                    <Typography textAlign="center">{page}</Typography>
+                                </MenuItem>
+                            ))}    
                         </Menu>
                     </Box>
                     <Typography
@@ -91,7 +87,7 @@ const NavigationBar = () => {
                         Cocktail
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
+                        {pages.map(({page, path}) => (
                         <Button
                             key={page}
                             onClick={handleCloseNavMenu}
