@@ -9,6 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import {Link} from '@mui/material';
 
 const pages = ['Home', 'Drinks', 'Ingredients', 'About'];
 
@@ -65,11 +66,24 @@ const NavigationBar = () => {
                                 display: { xs: 'block', md: 'none' },
                             }}
                             >
-                            {pages.map((page) => (
+                            {/* {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                                 <Typography textAlign="center">{page}</Typography>
                                 </MenuItem>
-                            ))}
+                            ))} */}
+                            <MenuItem key={pages[0]} onClick={handleCloseNavMenu}>
+                                <Link to="/">{pages[0]}</Link>
+                            </MenuItem>
+                            <MenuItem key={pages[1]} onClick={handleCloseNavMenu}>
+                                <Link to="/drinks">{pages[1]}</Link>
+                            </MenuItem>
+                            <MenuItem key={pages[2]} onClick={handleCloseNavMenu}>
+                                <Link to="/ingredients">{pages[2]}</Link>
+                            </MenuItem>
+                            <MenuItem key={pages[3]} onClick={handleCloseNavMenu}>
+                                <Link to="/about">{pages[3]}</Link>
+                            </MenuItem>
+
                         </Menu>
                     </Box>
                     <Typography
@@ -78,7 +92,7 @@ const NavigationBar = () => {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                     >
-                        Cocktails
+                        Cocktail
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (

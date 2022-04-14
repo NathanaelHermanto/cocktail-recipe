@@ -60,7 +60,7 @@ const Home = () => {
     } else {
         return (
             <Box sx={{ mt: '10px', mr: '10px' }}> 
-                <img src={image}  width={250} height={250} alt={data.name} /> 
+                <img src={image}  width={250} height={250} alt={data.name} /> <br/>
                 <>{data.name}</>  
                 <>{data.image}</>
             </Box>
