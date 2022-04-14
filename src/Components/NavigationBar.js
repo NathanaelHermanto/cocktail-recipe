@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import {Link} from '@mui/material';
+import {Link} from 'react-router-dom';
 
 const pages = ['Home', 'Drinks', 'Ingredients', 'About'];
 
@@ -66,22 +66,18 @@ const NavigationBar = () => {
                                 display: { xs: 'block', md: 'none' },
                             }}
                             >
-                            {/* {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
-                            ))} */}
-                            <MenuItem key={pages[0]} onClick={handleCloseNavMenu}>
-                                <Link to="/">{pages[0]}</Link>
+                    
+                            <MenuItem component={Link} to={"/"} onClick={handleCloseNavMenu} key={pages[0]} >
+                                <Typography textAlign="center">{pages[0]}</Typography>
                             </MenuItem>
-                            <MenuItem key={pages[1]} onClick={handleCloseNavMenu}>
-                                <Link to="/drinks">{pages[1]}</Link>
+                            <MenuItem component={Link} to={"/drinks"} onClick={handleCloseNavMenu} key={pages[1]} >
+                                <Typography textAlign="center">{pages[1]}</Typography>
                             </MenuItem>
-                            <MenuItem key={pages[2]} onClick={handleCloseNavMenu}>
-                                <Link to="/ingredients">{pages[2]}</Link>
+                            <MenuItem component={Link} to={"/ingredients"} onClick={handleCloseNavMenu} key={pages[2]} >
+                                <Typography textAlign="center">{pages[2]}</Typography>
                             </MenuItem>
-                            <MenuItem key={pages[3]} onClick={handleCloseNavMenu}>
-                                <Link to="/about">{pages[3]}</Link>
+                            <MenuItem component={Link} to={"/about"} onClick={handleCloseNavMenu} key={pages[3]} >
+                                <Typography textAlign="center">{pages[3]}</Typography>
                             </MenuItem>
 
                         </Menu>
