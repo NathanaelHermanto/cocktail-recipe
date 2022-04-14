@@ -9,12 +9,12 @@ import Ingredients from './Components/Ingredients';
 function App() {
   return (
     <Router>
-      <NavigationBar style={{margin: "10%"}}/>
+      <NavigationBar/>
       <Routes>
-        <Route exact path="/" component={<Home/>} />
-        <Route path="/about" component={<About/>} />
-        <Route path="/drinks" component={<Drinks/>} />
-        <Route path="/ingredients" component={<Ingredients/>} />
+        <Route exact path="/" element={<Home/>} />
+        <Route path="/drinks" element={<Drinks/>} />
+        <Route path="/ingredients" element={<Ingredients/>} />
+        <Route path="/about" element={<About/>} />
       </Routes>
     </Router>
     
