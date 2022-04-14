@@ -9,8 +9,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from 'react-router-dom';
 
-const pages = ['Home', 'Drinks', 'Ingredients', 'About'];
+const pages = [
+    { page: 'Home', path: '/' },
+    { page: 'Drinks', path: '/drinks' },
+    { page: 'Ingredients', path: '/ingredients' },
+    { page: 'About', path: '/about' },
+  ];
 
 const NavigationBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -65,11 +71,13 @@ const NavigationBar = () => {
                                 display: { xs: 'block', md: 'none' },
                             }}
                             >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                <Typography textAlign="center">{page}</Typography>
+                            {pages.map(({page, path}) => (
+                                <MenuItem onClick={handleCloseNavMenu} key={page} >
+                                    <Typography textAlign="center">
+                                        <Link to={path} style={{textDecoration: "none", color: 'black'}}> {page}</Link>
+                                    </Typography>
                                 </MenuItem>
-                            ))}
+                            ))} 
                         </Menu>
                     </Box>
                     <Typography
@@ -78,16 +86,16 @@ const NavigationBar = () => {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                     >
-                        Cocktails
+                        Cocktailz
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
+                        {pages.map(({page, path}) => (
                         <Button
                             key={page}
                             onClick={handleCloseNavMenu}
                             sx={{ my: 2, color: 'white', display: 'block' }}
                         >
-                            {page}
+                            <Link to={path} style={{textDecoration: "none", color: 'white' }}> {page}</Link>
                         </Button>
                         ))}
                     </Box>
