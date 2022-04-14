@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Box } from '@mui/material'
 import { Cocktail, Ingredient } from './Cocktail';
 
-const apiUrl = 'https:/www.thecocktaildb.com/api/json/v1/1/random.php'
+const apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
 
 const Home = () => {
     const [error, setError] = useState(null);
@@ -62,6 +62,7 @@ const Home = () => {
             <Box sx={{ mt: '10px', mr: '10px' }}> 
                 <img src={image}  width={250} height={250} alt={data.name} /> 
                 <>{data.name}</>  
+                <>{data.image}</>
             </Box>
         )
     }
