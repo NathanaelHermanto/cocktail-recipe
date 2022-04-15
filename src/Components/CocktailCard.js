@@ -6,7 +6,6 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
@@ -27,7 +26,7 @@ const ExpandMore = styled((props) => {
     }),
   }));
 
-const CocktailCard = ({ Cocktail }) => {
+const CocktailCard = ({ Cocktail, img }) => {
     const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = () => {
@@ -35,7 +34,71 @@ const CocktailCard = ({ Cocktail }) => {
     };
 
     return (
-        <div>CocktailCard</div>
+      <Card sx={{ maxWidth: '100%'}}>
+        <CardHeader
+          action={
+            <IconButton aria-label="settings">
+              <MoreVertIcon />
+            </IconButton>
+          }
+          title={Cocktail.name}
+          subheader={Cocktail.category}
+        />
+        <div
+          style={{
+            display: "flex",
+            alignItem: "center",
+            justifyContent: "center"
+          }}
+        >
+          <CardMedia
+          component="img"
+          image={img}
+          alt={Cocktail.name}
+          style={{
+            width: "auto",
+            maxHeight: "300px"
+          }}
+        />
+        </div>
+        
+        <CardContent>
+          <Typography variant="body2" color="text.secondary">
+            {`an ${Cocktail.alcoholic} drink using ${Cocktail.glass}`}
+          </Typography>
+        </CardContent>
+        <CardActions disableSpacing>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+          <IconButton aria-label="share">
+            <ShareIcon />
+          </IconButton>
+          <ExpandMore
+            expand={expanded}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </ExpandMore>
+        </CardActions>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography paragraph>Ingredients:</Typography>
+            {Cocktail.ingredients?.filter((Ingredient) => Ingredient.name!=null)
+              .map((Ingredient) => (
+                <Typography paragraph key={Ingredient.name}>
+                  {`- ${Ingredient.name}: ${Ingredient.measure}`}
+                </Typography>
+            ))}
+            <Typography paragraph>Method:</Typography>
+            {Cocktail.instructions == null? <Typography> No instrutions available </Typography> 
+              : <Typography> {Cocktail.instructions} </Typography>}
+            
+          </CardContent>
+        </Collapse>
+      </Card>
     )
 }
 

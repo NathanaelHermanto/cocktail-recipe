@@ -1,5 +1,5 @@
-export const Cocktail = (name, ingredients, glass, instructions, video, image) => 
-    { return { name: name, ingredients: ingredients, glass: glass, instructions: instructions, video: video, image: image}}
+export const Cocktail = (name, category, ingredients, glass, instructions, video, image, alcoholic) => 
+    { return { name: name, category: category, ingredients: ingredients, glass: glass, instructions: instructions, video: video, image: image, alcoholic: alcoholic}}
 
-export const Ingredient = (ingredient, measure) => 
-    { return { ingredient: ingredient, measure: measure}}
+export const Ingredient = (name, measure) => 
+    { return { name: name, measure: measure}}
