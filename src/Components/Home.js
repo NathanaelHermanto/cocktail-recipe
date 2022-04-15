@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Box } from '@mui/material'
 import { Cocktail, Ingredient } from './Cocktail';
+import  CocktailCard  from './CocktailCard'
 
 const apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
 
@@ -19,6 +20,7 @@ const Home = () => {
                 console.log(data.drinks[0]);
                 setIsLoaded(true);
                 setData(Cocktail(data.drinks[0].strDrink, 
+                                data.drinks[0].strCategory,
                                 [Ingredient(data.drinks[0].strIngredient1, data.drinks[0].strMeasure1), 
                                 Ingredient(data.drinks[0].strIngredient2, data.drinks[0].strMeasure2),
                                 Ingredient(data.drinks[0].strIngredient3, data.drinks[0].strMeasure3),
@@ -30,7 +32,8 @@ const Home = () => {
                                 data.drinks[0].strGlass,
                                 data.drinks[0].strInstructions,
                                 data.drinks[0].strVideo,
-                                data.drinks[0].strDrinkThumb
+                                data.drinks[0].strDrinkThumb,
+                                data.drinks[0].strAlcoholic
                         )
                     )
                 },
@@ -60,9 +63,7 @@ const Home = () => {
     } else {
         return (
             <Box sx={{ mt: '10px', mr: '10px' }}> 
-                <img src={image}  width={250} height={250} alt={data.name} /> <br/>
-                <>{data.name}</>  
-                <>{data.image}</>
+                <CocktailCard Cocktail={data} img={image}/>
             </Box>
         )
     }
