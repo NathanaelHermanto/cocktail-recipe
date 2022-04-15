@@ -9,7 +9,6 @@ const Home = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [data, setData] = useState([]);
-    const [image, setImage] = useState([]);
 
     useEffect(() => {
         fetch(apiUrl)
@@ -44,18 +43,6 @@ const Home = () => {
             })
         }, [])
 
-    const fetchImage = async () => {
-        const res = await fetch(data.image);
-        const imageBlob = await res.blob();
-        const imageObjectURL = URL.createObjectURL(imageBlob);
-        setImage(imageObjectURL);
-    };
-    
-    useEffect(() => {
-        fetchImage();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []); 
-
     if (error) {
         return <>Error: {error.message}</>;
     } else if (!isLoaded) {
@@ -63,7 +50,7 @@ const Home = () => {
     } else {
         return (
             <Box sx={{ mt: '10px', mr: '10px' }}> 
-                <CocktailCard Cocktail={data} img={image}/>
+                <CocktailCard Cocktail={data} />
             </Box>
         )
     }

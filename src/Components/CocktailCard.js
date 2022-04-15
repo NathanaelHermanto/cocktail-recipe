@@ -24,7 +24,7 @@ const ExpandMore = styled((props) => {
     }),
   }));
 
-const CocktailCard = ({ Cocktail, img }) => {
+const CocktailCard = ({ Cocktail }) => {
     const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = () => {
@@ -51,7 +51,7 @@ const CocktailCard = ({ Cocktail, img }) => {
         >
           <CardMedia
           component="img"
-          image={img}
+          image={Cocktail.image}
           alt={Cocktail.name}
           style={{
             width: "auto",
