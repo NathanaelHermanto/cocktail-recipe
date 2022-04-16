@@ -1,5 +1,7 @@
 import React from 'react'
+// import { useState } from 'react';
 // import { Cocktail, Ingredient } from './Cocktail';
+import SearchBar from './SearchBar';
 
 // const urlRandom = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
 // const urlAList = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'
@@ -50,7 +52,10 @@ const Drinks = () => {
 
   return (
     <>
-       <div>Drinks</div>
+      <SearchBar
+                
+      />
+      <div>Drinks</div>
     </>
    
   )
