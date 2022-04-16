@@ -9,7 +9,7 @@ const Home = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [data, setData] = useState([]);
-
+    
     useEffect(() => {
         fetch(apiUrl)
             .then(function(response){
