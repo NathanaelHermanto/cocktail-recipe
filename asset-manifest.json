@@ -1,15 +1,19 @@
 {
   "files": {
     "main.css": "/cocktail-recipe/static/css/main.cab70224.css",
-    "main.js": "/cocktail-recipe/static/js/main.0d1071b2.js",
+    "main.js": "/cocktail-recipe/static/js/main.d60758bc.js",
     "static/js/787.0e0d59b9.chunk.js": "/cocktail-recipe/static/js/787.0e0d59b9.chunk.js",
+    "static/media/gin.png": "/cocktail-recipe/static/media/gin.5bc9c566f36d776ba970.png",
+    "static/media/rum.png": "/cocktail-recipe/static/media/rum.e882ba1bc56748f2b466.png",
+    "static/media/tequila.png": "/cocktail-recipe/static/media/tequila.66920df793314c840ca2.png",
+    "static/media/vodka.png": "/cocktail-recipe/static/media/vodka.7001963540bfec87066d.png",
     "index.html": "/cocktail-recipe/index.html",
     "main.cab70224.css.map": "/cocktail-recipe/static/css/main.cab70224.css.map",
-    "main.0d1071b2.js.map": "/cocktail-recipe/static/js/main.0d1071b2.js.map",
+    "main.d60758bc.js.map": "/cocktail-recipe/static/js/main.d60758bc.js.map",
     "787.0e0d59b9.chunk.js.map": "/cocktail-recipe/static/js/787.0e0d59b9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cab70224.css",
-    "static/js/main.0d1071b2.js"
+    "static/js/main.d60758bc.js"
   ]
 }
