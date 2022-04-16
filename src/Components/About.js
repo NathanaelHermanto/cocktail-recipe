@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div>About</div>
+    <div>created using https://www.thecocktaildb.com/ api and react</div>
   )
 }
 

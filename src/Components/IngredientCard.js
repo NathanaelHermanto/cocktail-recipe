@@ -9,7 +9,7 @@ const IngredientCard = ({ ing }) => {
     let assetsPath = require.context('../assets', false, /\.(png|jpe?g|svg)$/);
 
   return (
-    <Card sx={{ maxWidth: "100%", m: 0.5, pt: 5 }}>
+    <Card sx={{ maxWidth: "100%", m: 0.5, pt: 1, height: "100%" }}>
       <CardActionArea>
         <div
           style={{
