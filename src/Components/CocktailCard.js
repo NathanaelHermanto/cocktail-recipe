@@ -84,7 +84,7 @@ const CocktailCard = ({ Cocktail }) => {
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph>Ingredients:</Typography>
-            {Cocktail.ingredients?.filter((Ingredient) => Ingredient.name!=null)
+            {Cocktail.ingredients?.filter((Ingredient) => Ingredient.name!==null)
               .map((Ingredient) => (
                 <Typography paragraph key={Ingredient.name}>
                   {`- ${Ingredient.name}: ${Ingredient.measure}`}
