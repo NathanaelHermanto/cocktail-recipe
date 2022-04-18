@@ -6,12 +6,11 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom'
 
-const IngredientCard = ({ ing }) => {
-    let assetsPath = require.context('../assets', false, /\.(png|jpe?g|svg)$/);
+const DrinkIngCard = ({ ing }) => {
 
   return (
     <Card sx={{ maxWidth: "100%", m: 0.5, pt: 1, height: "100%" }}>
-      <CardActionArea component={RouterLink} to={`/ingredients/${ing.name}`}>
+      <CardActionArea>
         <div
           style={{
             display: "flex",
@@ -21,7 +20,7 @@ const IngredientCard = ({ ing }) => {
         >
           <CardMedia
             component="img"
-            image={assetsPath(ing.imageUrl)}
+            image={ing.image}
             alt={ing.name}
             style={{
                 width: "auto",
@@ -33,13 +32,10 @@ const IngredientCard = ({ ing }) => {
           <Typography gutterBottom variant="h5" component="div">
             {ing.name}
           </Typography>
-          <Typography variant="body2" color="text.secondary" textAlign="justify">
-            {ing.text}
-          </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
   )
 }
 
-export default IngredientCard
+export default DrinkIngCard

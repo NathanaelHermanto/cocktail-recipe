@@ -62,7 +62,7 @@ const CocktailCard = ({ Cocktail }) => {
         
         <CardContent>
           <Typography variant="body2" color="text.secondary">
-            {`an ${Cocktail.alcoholic} drink using ${Cocktail.glass}`}
+            {`an ${Cocktail.alcoholic} drink served in a ${Cocktail.glass}`}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>

@@ -49,7 +49,7 @@ const Home = () => {
         return <>Loading...</>
     } else {
         return (
-            <Box sx={{ mt: '10px', mr: '10px' }}> 
+            <Box sx={{ mt: '10px'}}> 
                 <CocktailCard Cocktail={data} />
             </Box>
         )
