@@ -4,13 +4,15 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom'
 
-const IngredientCard = ({ ing }) => {
-    let assetsPath = require.context('../assets', false, /\.(png|jpe?g|svg)$/);
-
+const DrinkIngCard = ({ cocktail }) => {
+  if (!cocktail) {
+    return <>Loading...</>
+  }
   return (
     <Card sx={{ maxWidth: "100%", m: 0.5, pt: 1, height: "100%" }}>
-      <CardActionArea>
+      <CardActionArea component={RouterLink} to={`/drinks/${cocktail.id}`}>
         <div
           style={{
             display: "flex",
@@ -18,22 +20,19 @@ const IngredientCard = ({ ing }) => {
             justifyContent: "center"
           }}
         >
-            <CardMedia
+          <CardMedia
             component="img"
-            image={assetsPath(ing.imageUrl)}
-            alt={ing.name}
+            image={cocktail.image}
+            alt={cocktail.name}
             style={{
                 width: "auto",
                 maxHeight: "300px",
             }}
-            />
+          />
         </div>
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {ing.name}
-          </Typography>
-          <Typography variant="body2" color="text.secondary" textAlign="justify">
-            {ing.text}
+          <Typography gutterBottom variant="h6" component="div">
+            {cocktail.name}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -41,4 +40,4 @@ const IngredientCard = ({ ing }) => {
   )
 }
 
-export default IngredientCard
+export default DrinkIngCard

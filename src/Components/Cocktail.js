@@ -3,3 +3,6 @@ export const Cocktail = (name, category, ingredients, glass, instructions, video
 
 export const Ingredient = (name, measure) => 
     { return { name: name, measure: measure}}
+
+export const CocktailIng = (id, name, image) => 
+    { return { id: id, name: name, image: image}}
