@@ -7,7 +7,7 @@ import { CardActionArea } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom'
 
 const IngredientCard = ({ ing }) => {
-    let assetsPath = require.context('../assets', false, /\.(png|jpe?g|svg)$/);
+    let assetsPath = require.context('../../assets', false, /\.(png|jpe?g|svg)$/);
 
   return (
     <Card sx={{ maxWidth: "100%", m: 0.5, pt: 1, height: "100%" }}>

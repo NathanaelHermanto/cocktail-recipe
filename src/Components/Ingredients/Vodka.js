@@ -4,7 +4,7 @@ import DrinksByIng from './DrinksByIng'
 const Vodka = () => {
   return (
     <>
-      <DrinksByIng ing="Gin"/>
+      <DrinksByIng ing="Vodka"/>
     </>
   )
 }

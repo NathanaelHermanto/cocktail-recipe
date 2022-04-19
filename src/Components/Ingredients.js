@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid, Box, Typography } from '@mui/material'
-import IngredientCard from './IngredientCard'
+import IngredientCard from './Cards/IngredientCard'
 
 const Ingredients = () => {
   const popularIngredients = [

@@ -1,12 +1,12 @@
 import React from 'react'
 import DrinksByIng from './DrinksByIng'
 
-const Tequila = () => {
+const Rum = () => {
   return (
     <>
-      <DrinksByIng ing="Gin"/>
+      <DrinksByIng ing="Rum"/>
     </>
   )
 }
 
-export default Tequila
+export default Rum

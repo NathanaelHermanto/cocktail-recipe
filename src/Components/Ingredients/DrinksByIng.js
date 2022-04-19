@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Grid, Box, Typography } from '@mui/material'
-import { CocktailIng } from './Cocktail';
-import DrinkIngCard from './DrinkIng';
+import { CocktailIng } from '../Cocktail';
+import DrinkIngCard from '../Cards/DrinkIngCard';
 
 const DrinksByIng = ({ing}) => {
     const apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i='
@@ -20,7 +20,7 @@ const DrinksByIng = ({ing}) => {
             .catch(error => {
                 setError({ errorMessage: error.toString() });
                 console.error('There was an error!', error);
-            })
+            })// eslint-disable-next-line react-hooks/exhaustive-deps
         }, []);
 
         if (error) {
@@ -41,9 +41,9 @@ const DrinksByIng = ({ing}) => {
                         justifyContent="center"
                         alignItems="stretch"
                         >
-                        {data.map((ingredient) => (
-                            <Grid item xs={12} sm={4} md={3} lg={3} key={ingredient.name} minWidth={210} maxWidth={500}>
-                                <DrinkIngCard ing={ingredient} key={ingredient.name}/>
+                        {data.map((cocktail) => (
+                            <Grid item xs={12} sm={4} md={3} lg={3} key={cocktail.name} minWidth={210} maxWidth={500}>
+                                <DrinkIngCard cocktail={cocktail} key={cocktail.name}/>
                             </Grid>
                         ))}
                         </Grid>

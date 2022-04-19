@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { Box } from '@mui/material'
 import { Cocktail, Ingredient } from './Cocktail';
-import  CocktailCard  from './Cards/CocktailCard'
+import CocktailCard from './Cards/DrinkIngCard';
+import { useParams } from "react-router-dom";
 
-const apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
-
-const Home = () => {
+const CocktailView = () => {
+    const cocktailID = useParams();
+    const apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
+    const url = `${apiUrl}${cocktailID}`;
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [data, setData] = useState([]);
     
     useEffect(() => {
-        fetch(apiUrl)
+        fetch(url)
             .then(function(response){
                 return response.json();
             })
@@ -40,20 +42,23 @@ const Home = () => {
                 setIsLoaded(true);
                 setError(error);
                 console.log("error: ", error.message)
-            })
+            }) // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [])
 
-    if (error) {
-        return <>Error: {error.message}</>;
-    } else if (!isLoaded) {
-        return <>Loading...</>
-    } else {
-        return (
-            <Box sx={{ mt: '10px'}}> 
-                <CocktailCard Cocktail={data} />
-            </Box>
-        )
-    }
+        
+        if (error) {
+            return <>Error: {error.message}</>;
+        } else if (!isLoaded) {
+            return <>Loading...</>
+        } else {
+            return (
+                <>
+                    <Box sx={{ mt: '10px'}}> 
+                        <CocktailCard Cocktail={data} />
+                    </Box>
+                </>
+            )
+        }
 }
 
-export default Home
+export default CocktailView;

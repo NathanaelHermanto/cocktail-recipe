@@ -6,11 +6,12 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom'
 
-const DrinkIngCard = ({ ing }) => {
-
+const DrinkIngCard = ({ cocktail }) => {
+  if(cocktail === undefined) console.log("cocktail is undefined")
+  else console.log(cocktail)
   return (
     <Card sx={{ maxWidth: "100%", m: 0.5, pt: 1, height: "100%" }}>
-      <CardActionArea>
+      <CardActionArea component={RouterLink} to={`/drinks/${cocktail.id}`}>
         <div
           style={{
             display: "flex",
@@ -20,8 +21,8 @@ const DrinkIngCard = ({ ing }) => {
         >
           <CardMedia
             component="img"
-            image={ing.image}
-            alt={ing.name}
+            image={cocktail.image}
+            alt={cocktail.name}
             style={{
                 width: "auto",
                 maxHeight: "300px",
@@ -29,8 +30,8 @@ const DrinkIngCard = ({ ing }) => {
           />
         </div>
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {ing.name}
+          <Typography gutterBottom variant="h6" component="div">
+            {cocktail.name}
           </Typography>
         </CardContent>
       </CardActionArea>
