@@ -7,8 +7,9 @@ import { CardActionArea } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom'
 
 const DrinkIngCard = ({ cocktail }) => {
-  if(cocktail === undefined) console.log("cocktail is undefined")
-  else console.log(cocktail)
+  if (!cocktail) {
+    return <>Loading...</>
+  }
   return (
     <Card sx={{ maxWidth: "100%", m: 0.5, pt: 1, height: "100%" }}>
       <CardActionArea component={RouterLink} to={`/drinks/${cocktail.id}`}>
