@@ -84,8 +84,8 @@ const Drinks = () => {
       <>
         <Box>
           <SearchBar 
-            onSubmit={search}
             setSearchQuery={setSearchQuery}
+            onS={search}
           />
         </Box>
         
