@@ -3,11 +3,11 @@ import { FormControl, TextField, InputAdornment } from '@mui/material';
 import { IconButton } from '@mui/material';
 import  SearchIcon  from '@mui/icons-material/Search' 
 
-const SearchBar = ({ setSearchQuery, onSubmit }) => {
+const SearchBar = ({ setSearchQuery, onS }) => {
   return (
     <>
       <FormControl
-        onSubmit={onSubmit}
+        onSubmit={onS}
         fullWidth>
         <TextField
           fullWidth
@@ -20,7 +20,7 @@ const SearchBar = ({ setSearchQuery, onSubmit }) => {
             endAdornment:  (
               <InputAdornment position="end">
                 <IconButton type="submit" aria-label="search">
-                    <SearchIcon />
+                    <SearchIcon onClick={onS}/>
                 </IconButton>
               </InputAdornment>
             ) 
